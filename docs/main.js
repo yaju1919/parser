@@ -18,7 +18,6 @@
         function kakko(str){
             if(str.indexOf('"') === -1) return '"' + str + '"';
             else if(str.indexOf("'") === -1) return "'" + str + "'";
-            else if(str.indexOf("`") === -1) return '`' + str + '`';
             return false;
         }
         var str = input().split('\n').map(function(v){
