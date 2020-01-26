@@ -24,7 +24,7 @@
             var m = v.match(/: /);
             if(!m) return '';
             var key = v.slice(0, m.index).trim();
-            var value = v.slice(m.index + 2).trim();
+            var value = v.slice(m.index + 2).trim().replace(/\/\*.*?\*\//g,''); // コメントアウトを消す
             if(value.slice(-1) === ';') value = value.slice(0, -1); // CSS
             key = kakko(key);
             value = kakko(value);
