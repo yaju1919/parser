@@ -32,7 +32,7 @@
         }).filter(function(v){
             return v;
         }).join(',\n');
-        str = '{\n' + str + '}\n';
+        str = '{\n' + str + ',\n}';
         result = str;
         showResult(str);
     };
