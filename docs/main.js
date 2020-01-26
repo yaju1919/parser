@@ -11,7 +11,7 @@
     var input = yaju1919.addInputText(h,{
         textarea: true,
         save: "CSS",
-        placeholder: ".btn-square {  \ndisplay: inline-block;  \npadding: 0.5em 1em;  \ntext-decoration: none;  \nbackground: #668ad8;/*ボタン色*/  \ncolor: #FFF;  \nborder-bottom: solid 4px #627295;  \nborder-radius: 3px;\n}",
+        placeholder: ".btn-square {\ndisplay: inline-block;\npadding: 0.5em 1em;\ntext-decoration: none;\nbackground: #668ad8;\ncolor: #FFF;\nborder-bottom: solid 4px #627295;\nborder-radius: 3px;\n}",
     });
     function main(){
         function kakko(str){
