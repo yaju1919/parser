@@ -10,6 +10,7 @@
     $("<h1>",{text:"CSSをJSの連想配列に変換"}).appendTo(h);
     var input = yaju1919.addInputText(h,{
         textarea: true,
+        save: "CSS",
         width: "50%",
         placeholder: "xxx: yyy",
     });
