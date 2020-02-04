@@ -11,6 +11,7 @@
     var input = yaju1919.addInputText(h,{
         textarea: true,
         save: "CSS",
+        change: main,
         placeholder: ".btn-square {\ndisplay: inline-block;\npadding: 0.5em 1em;\ntext-decoration: none;\nbackground: #668ad8;\ncolor: #FFF;\nborder-bottom: solid 4px #627295;\nborder-radius: 3px;\n}",
     });
     function main(){
@@ -20,7 +21,7 @@
             return false;
         }
         var str = input().split('\n').map(function(v){
-            var m = v.match(/: /);
+            var m = v.match(/:/);
             if(!m) return '';
             var key = v.slice(0, m.index).trim();
             var value = v.slice(m.index + 2).trim().replace(/\/\*.*?\*\//g,''); // コメントアウトを消す
@@ -32,19 +33,12 @@
             return v;
         }).join(',\n');
         str = '{\n' + str + ',\n}';
-        result = str;
-        showResult(str);
-    };
-    addBtn("変換", main);
-    addBtn("コピー", function(){
-        if(result) yaju1919.copy(result);
-    });
-    var result;
-    var result_elm = $("<div>").appendTo(h);
-    function showResult(str){
-        result_elm.empty();
-        str.split('\n').forEach(function(v){
-            $("<div>").text(v).appendTo(result_elm);
+        yaju1919.addInputText(result_elm.empty(),{
+            title: "output",
+            textarea: true,
+            readonly: true,
+            value: str
         });
-    }
+    };
+    var result_elm = $("<div>").appendTo(h);
 })();
