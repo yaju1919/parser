@@ -15,6 +15,7 @@
         placeholder: ".btn-square {\ndisplay: inline-block;\npadding: 0.5em 1em;\ntext-decoration: none;\nbackground: #668ad8;\ncolor: #FFF;\nborder-bottom: solid 4px #627295;\nborder-radius: 3px;\n}",
     });
     function main(){
+        if(!input) return;
         function kakko(str){
             if(str.indexOf('"') === -1) return '"' + str + '"';
             else if(str.indexOf("'") === -1) return "'" + str + "'";
@@ -41,4 +42,5 @@
         });
     };
     var result_elm = $("<div>").appendTo(h);
+    input.trigger("change");
 })();
